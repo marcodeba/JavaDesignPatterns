@@ -26,8 +26,8 @@ public class NewPrototype implements Cloneable {
     public Object clone() {
         NewPrototype ret = null;
         try {
-            ret = (NewPrototype)super.clone();
-            ret.prototype = (Prototype)this.prototype.clone();
+            ret = (NewPrototype) super.clone();
+            ret.prototype = (Prototype) this.prototype.clone();
             return ret;
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
@@ -38,11 +38,12 @@ public class NewPrototype implements Cloneable {
     public static void main(String[] args) {
         Prototype pro = new Prototype();
         pro.setName("original object");
+
         NewPrototype newObj = new NewPrototype();
         newObj.setId("test1");
         newObj.setPrototype(pro);
 
-        NewPrototype clonObj = (NewPrototype)newObj.clone();
+        NewPrototype clonObj = (NewPrototype) newObj.clone();
         clonObj.setId("testClone");
         clonObj.getPrototype().setName("changed object");
 
