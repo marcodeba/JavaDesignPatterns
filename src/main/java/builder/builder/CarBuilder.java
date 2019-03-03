@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface CarBuilder {
     public abstract void setSequence(List<String> sequence);
+
     //设置完毕顺序后，就可以直接拿到这个车辆模型了
     public abstract CarModel getCarModel();
 }

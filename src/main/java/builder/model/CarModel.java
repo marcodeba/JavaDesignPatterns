@@ -10,12 +10,15 @@ public abstract class CarModel {
     private List<String> sequence = new ArrayList<String>();
 
     protected abstract void start();
+
     protected abstract void stop();
+
     protected abstract void alarm();
+
     protected abstract void engineBoom();
 
     final public void run() {
-        for (int i = 0; i < this.sequence.size(); i ++) {
+        for (int i = 0; i < this.sequence.size(); i++) {
             if ("start".equalsIgnoreCase(this.sequence.get(i))) {
                 this.start();
             } else if ("stop".equalsIgnoreCase(this.sequence.get(i))) {
@@ -28,11 +31,11 @@ public abstract class CarModel {
         }
     }
 
-    final public void setSequence(List<String> sequence) {
-        this.sequence = sequence;
-    }
-
     final public List<String> getSequence() {
         return sequence;
+    }
+
+    final public void setSequence(List<String> sequence) {
+        this.sequence = sequence;
     }
 }
