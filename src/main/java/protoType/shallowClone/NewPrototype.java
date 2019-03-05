@@ -7,6 +7,25 @@ package protoType.shallowClone;
  */
 public class NewPrototype implements Cloneable {
     private String id;
+    private Prototype prototype;
+
+    public static void main(String[] args) {
+        Prototype pro = new Prototype();
+        pro.setName("original object");
+        NewPrototype newObj = new NewPrototype();
+        newObj.setId("test1");
+        newObj.setPrototype(pro);
+
+        NewPrototype copyObj = (NewPrototype) newObj.clone();
+        copyObj.setId("testCopy");
+        copyObj.getPrototype().setName("changed object");
+
+        System.out.println("original object id:" + newObj.getId());
+        System.out.println("original object name:" + newObj.getPrototype().getName());
+
+        System.out.println("cloned object id:" + copyObj.getId());
+        System.out.println("cloned object name:" + copyObj.getPrototype().getName());
+    }
 
     public String getId() {
         return id;
@@ -15,8 +34,6 @@ public class NewPrototype implements Cloneable {
     public void setId(String id) {
         this.id = id;
     }
-
-    private Prototype prototype;
 
     public Prototype getPrototype() {
         return prototype;
@@ -33,24 +50,6 @@ public class NewPrototype implements Cloneable {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public static void main(String[] args) {
-        Prototype pro = new Prototype();
-        pro.setName("original object");
-        NewPrototype newObj = new NewPrototype();
-        newObj.setId("test1");
-        newObj.setPrototype(pro);
-
-        NewPrototype copyObj = (NewPrototype)newObj.clone();
-        copyObj.setId("testCopy");
-        copyObj.getPrototype().setName("changed object");
-
-        System.out.println("original object id:" + newObj.getId());
-        System.out.println("original object name:" + newObj.getPrototype().getName());
-
-        System.out.println("cloned object id:" + copyObj.getId());
-        System.out.println("cloned object name:" + copyObj.getPrototype().getName());
     }
 }
 
