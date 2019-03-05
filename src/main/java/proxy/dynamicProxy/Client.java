@@ -27,7 +27,8 @@ public class Client {
         byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{IAbstractSubject.class});
         try {
             String filePath = IAbstractSubject.class.getResource("").getPath();
-            FileOutputStream fos = new FileOutputStream( filePath + "/$Proxy0.class");
+            System.out.println(filePath);
+            FileOutputStream fos = new FileOutputStream(filePath + "/$Proxy0.class");
             fos.write(bytes);
             fos.close();
         } catch (Exception e) {

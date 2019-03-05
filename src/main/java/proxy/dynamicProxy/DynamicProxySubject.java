@@ -14,7 +14,6 @@ public class DynamicProxySubject implements InvocationHandler {
         this.target = target;
     }
 
-    @Override
     /**
      * proxy:指被代理的对象,$Proxy0是系统自动生成的实现IAbstractSubject接口的代理类，并持有InvocationHandler引用
      * method:指代的是我们所要调用真实对象的某个方法的Method对象

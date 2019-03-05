@@ -5,5 +5,6 @@ package proxy.dynamicProxy;
  */
 public interface IAbstractSubject {
     public void requestHouse1();
+
     public void requestHouse2();
 }
