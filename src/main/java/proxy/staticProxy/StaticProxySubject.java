@@ -1,27 +1,26 @@
 package proxy.staticProxy;
 
 /**
- * ´úÀí½ÇÉ«£¬ÖĞ½é£¬º¬ÓĞÕæÊµ½ÇÉ«µÄÒıÓÃ
+ * ä»£ç†è§’è‰²ï¼Œä¸­ä»‹ï¼Œå«æœ‰çœŸå®è§’è‰²çš„å¼•ç”¨
  * @author marcopan
- * ´úÀí½ÇÉ«×öÁ½¼şÊÂ£º
- * 1. ¹ØÁªÕæÊµ½ÇÉ«¶ÔÏó
- * 2. µ÷ÓÃÕæÊµ¶ÔÏó·½·¨
+ * ä»£ç†è§’è‰²åšä¸¤ä»¶äº‹ï¼š
+ * 1. å…³è”çœŸå®è§’è‰²å¯¹è±¡
+ * 2. è°ƒç”¨çœŸå®å¯¹è±¡æ–¹æ³•
  */
 public class StaticProxySubject implements IAbstractSubject {
-	// º¬ÓĞÕæÊµ½ÇÉ«µÄÒıÓÃ
-	private RealSubject realSubject = null;
+    // å«æœ‰çœŸå®è§’è‰²çš„å¼•ç”¨
+    private RealSubject realSubject = null;
 
-	public StaticProxySubject(RealSubject subject) {
-		this.realSubject = subject;
-	}
+    public StaticProxySubject(RealSubject subject) {
+        this.realSubject = subject;
+    }
 
-	@Override
-	public void rentHouse() {
-		//this.preRequest();
-		realSubject.rentHouse();
-		//this.postRequest();
-	}
-	
+    public void rentHouse() {
+        //this.preRequest();
+        realSubject.rentHouse();
+        //this.postRequest();
+    }
+
 //	private void preRequest() {
 //		System.out.println("preRequest from StaticProxySubject");
 //	}
