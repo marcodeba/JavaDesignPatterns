@@ -5,8 +5,7 @@ import factorymode.factoryMethodmode.car.Benz;
 
 public class BenzFactory implements CarFactory {
 
-	@Override
-	public AbstractCar createCar() {
-		return new Benz();
-	}
+    public AbstractCar createCar() {
+        return new Benz();
+    }
 }
