@@ -5,6 +5,10 @@ package singleton.lazySingleton;
  */
 public class LazySingleton {
     private LazySingleton() {
+        // 防止通过反射来破坏单例
+        if (LazySingleHolder.singleton != null) {
+            throw new RuntimeException("不允许创建多个实例");
+        }
     }
 
     public static final LazySingleton getInstance() {
