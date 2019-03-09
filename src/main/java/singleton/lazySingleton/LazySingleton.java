@@ -4,9 +4,10 @@ package singleton.lazySingleton;
  * Created by marcopan on 2018/9/14.
  */
 public class LazySingleton {
-    private LazySingleton() {}
+    private LazySingleton() {
+    }
 
-    public LazySingleton getInstance() {
+    public static final LazySingleton getInstance() {
         return LazySingleHolder.singleton;
     }
 

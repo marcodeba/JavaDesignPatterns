@@ -8,14 +8,10 @@ import java.util.Properties;
  */
 public class ConfigManger {
     private static final String fPath = System.getProperty("user.dir") + File.separator + "singleton.properties";
+    private static final ConfigManger configManger = new ConfigManger();
     private File file = null;
     private Properties props = null;
     private long lastModifiedTime = 0;
-    private static final ConfigManger configManger = new ConfigManger();
-
-    public synchronized static ConfigManger getInstance() {
-        return configManger;
-    }
 
     private ConfigManger() {
         file = new File(fPath);
@@ -29,6 +25,24 @@ public class ConfigManger {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public synchronized static ConfigManger getInstance() {
+        return configManger;
+    }
+
+    public static void main(String[] args) {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        do {
+            System.out.println("property item to read");
+            try {
+                String line = reader.readLine();
+                if ("quit".equals(line)) break;
+                System.out.println(ConfigManger.getInstance().getConfigItem(line));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } while (true);
     }
 
     private Object getConfigItem(String key) {
@@ -46,19 +60,5 @@ public class ConfigManger {
         lastModifiedTime = newModifiedTime;
         Object value = props.getProperty(key, "");
         return value;
-    }
-
-    public static void main(String[] args) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        do {
-            System.out.println("property item to read");
-            try {
-                String line = reader.readLine();
-                if ("quit".equals(line)) break;
-                System.out.println(ConfigManger.getInstance().getConfigItem(line));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } while (true);
     }
 }

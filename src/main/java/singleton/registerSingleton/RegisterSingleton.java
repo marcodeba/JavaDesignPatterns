@@ -7,9 +7,10 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by marcopan on 2018/9/14.
  */
 public class RegisterSingleton {
-    private RegisterSingleton() {}
-
     private static Map<String, Object> register = new ConcurrentHashMap<String, Object>();
+
+    private RegisterSingleton() {
+    }
 
     public static RegisterSingleton getInstance(String name) {
         if ("".equals(name) || name == null) {
@@ -20,6 +21,6 @@ public class RegisterSingleton {
             register.put(name, new RegisterSingleton());
         }
 
-        return (RegisterSingleton)register.get(name);
+        return (RegisterSingleton) register.get(name);
     }
 }
