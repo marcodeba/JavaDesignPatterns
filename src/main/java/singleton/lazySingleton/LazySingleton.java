@@ -12,6 +12,6 @@ public class LazySingleton {
     }
 
     private static class LazySingleHolder {
-        private static LazySingleton singleton = new LazySingleton();
+        private static final LazySingleton singleton = new LazySingleton();
     }
 }
