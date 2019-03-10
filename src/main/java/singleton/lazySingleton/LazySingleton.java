@@ -61,6 +61,7 @@ public class LazySingleton  implements Serializable {
 
             FileInputStream fis = new FileInputStream("EnumSingleton.obj");
             ObjectInputStream ois = new ObjectInputStream(fis);
+            // readObject返回了一个新的对象实例
             LazySingleton instance2 = (LazySingleton) ois.readObject();
             ois.close();
 
