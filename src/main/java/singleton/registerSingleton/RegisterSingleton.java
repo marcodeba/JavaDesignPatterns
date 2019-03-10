@@ -1,26 +1,27 @@
 package singleton.registerSingleton;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * Created by marcopan on 2018/9/14.
  */
 public class RegisterSingleton {
-    private static Map<String, Object> register = new ConcurrentHashMap<String, Object>();
+    // volatile防止指令重排序
+    private volatile static RegisterSingleton lazy = null;
 
     private RegisterSingleton() {
     }
 
-    public static RegisterSingleton getInstance(String name) {
-        if ("".equals(name) || name == null) {
-            name = RegisterSingleton.class.getName();
+    public static RegisterSingleton getInstance() {
+        if (lazy == null) {
+            synchronized (RegisterSingleton.class) {
+                if (lazy == null) {
+                    lazy = new RegisterSingleton();
+                    //1.分配内存给这个对象
+                    //2.初始化对象
+                    //3.设置lazy指向刚分配的内存地址
+                    //4.初次访问对象
+                }
+            }
         }
-
-        if (register.get(name) == null) {
-            register.put(name, new RegisterSingleton());
-        }
-
-        return (RegisterSingleton) register.get(name);
+        return lazy;
     }
 }
