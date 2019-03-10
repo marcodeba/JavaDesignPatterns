@@ -4,7 +4,9 @@ package singleton.registerSingleton;
  * Created by marcopan on 2018/9/14.
  */
 public class RegisterSingleton {
-    // volatile防止指令重排序
+    /** volatile防止指令重排序
+     *  有反射和序列化攻击的问题
+     */
     private volatile static RegisterSingleton lazy = null;
 
     private RegisterSingleton() {
