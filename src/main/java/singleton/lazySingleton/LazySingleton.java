@@ -1,5 +1,6 @@
 package singleton.lazySingleton;
 
+import java.io.*;
 import java.lang.reflect.Constructor;
 
 /**
@@ -8,7 +9,7 @@ import java.lang.reflect.Constructor;
  *
  * 反射攻击解决方法，在构造函数中判断单例是否为空
  */
-public class LazySingleton {
+public class LazySingleton  implements Serializable {
     private LazySingleton() {
         // 防止通过反射来破坏单例
         if (LazySingletonHolder.singleton != null) {
@@ -20,27 +21,52 @@ public class LazySingleton {
         return LazySingletonHolder.singleton;
     }
 
+    private static class LazySingletonHolder {
+        private static final LazySingleton singleton = new LazySingleton();
+    }
+
+//    public static void main(String[] args) {
+//        try {
+//            //很无聊的情况下，进行破坏
+//            Class<?> clazz = LazySingleton.class;
+//            //通过反射拿到私有的构造方法
+//            Constructor c = clazz.getDeclaredConstructor(null);
+//            //强制访问，强吻，不愿意也要吻
+//            c.setAccessible(true);
+//
+//            //暴力初始化
+//            Object o1 = c.newInstance();
+//            //调用了两次构造方法，相当于new了两次,犯了原则性问题，
+//            Object o2 = LazySingleton.getInstance();//c.newInstance();
+//
+//            System.out.println(o1 == o2);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    private Object readResolve() {
+        return LazySingletonHolder.singleton;
+    }
+
     public static void main(String[] args) {
         try {
-            //很无聊的情况下，进行破坏
-            Class<?> clazz = LazySingleton.class;
-            //通过反射拿到私有的构造方法
-            Constructor c = clazz.getDeclaredConstructor(null);
-            //强制访问，强吻，不愿意也要吻
-            c.setAccessible(true);
+            LazySingleton instance1 = LazySingleton.getInstance();
 
-            //暴力初始化
-            Object o1 = c.newInstance();
-            //调用了两次构造方法，相当于new了两次,犯了原则性问题，
-            Object o2 = LazySingleton.getInstance();//c.newInstance();
+            FileOutputStream fos = new FileOutputStream("EnumSingleton.obj");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(instance1);
+            oos.flush();
+            oos.close();
 
-            System.out.println(o1 == o2);
+            FileInputStream fis = new FileInputStream("EnumSingleton.obj");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            LazySingleton instance2 = (LazySingleton) ois.readObject();
+            ois.close();
+
+            System.out.println(instance1 == instance2);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private static class LazySingletonHolder {
-        private static final LazySingleton singleton = new LazySingleton();
     }
 }
