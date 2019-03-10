@@ -13,7 +13,7 @@ public class SeriableSingleton implements Serializable {
     //通过IO流的读取，进而将读取的内容转换为Java对象
     //在转换过程中会重新创建对象new
 
-    public final static SeriableSingleton INSTANCE = new SeriableSingleton();
+    private final static SeriableSingleton INSTANCE = new SeriableSingleton();
 
     private SeriableSingleton() {
     }

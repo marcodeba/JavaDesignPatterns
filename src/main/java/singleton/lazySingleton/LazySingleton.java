@@ -5,6 +5,8 @@ import java.lang.reflect.Constructor;
 /**
  * Created by marcopan on 2018/9/14.
  * 有反射攻击和序列化攻击的问题
+ *
+ * 反射攻击解决方法，在构造函数中判断单例是否为空
  */
 public class LazySingleton {
     private LazySingleton() {
