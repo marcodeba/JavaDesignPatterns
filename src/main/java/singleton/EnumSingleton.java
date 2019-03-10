@@ -27,8 +27,6 @@ public enum EnumSingleton {
             EnumSingleton instance1 = EnumSingleton.getInstance();
             instance1.setData(new Object());
 
-            EnumSingleton instance2 = null;
-
             FileOutputStream fos = new FileOutputStream("EnumSingleton.obj");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(instance1);
@@ -37,7 +35,7 @@ public enum EnumSingleton {
 
             FileInputStream fis = new FileInputStream("EnumSingleton.obj");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            instance2 = (EnumSingleton) ois.readObject();
+            EnumSingleton instance2 = (EnumSingleton) ois.readObject();
             ois.close();
 
             System.out.println(instance1.getData());
