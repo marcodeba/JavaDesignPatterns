@@ -14,8 +14,11 @@ import java.lang.reflect.Proxy;
 public class DynamicProxySubject implements InvocationHandler {
     private IAbstractSubject target = null;
 
-    public Object getProxyInstance(IAbstractSubject target) {
+    public DynamicProxySubject(IAbstractSubject target) {
         this.target = target;
+    }
+
+    public Object getProxyInstance() {
         Class<?> clazz = target.getClass();
 
 //        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{IAbstractSubject.class});

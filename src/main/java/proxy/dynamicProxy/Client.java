@@ -7,7 +7,7 @@ public class Client {
     public static void main(String[] args) {
         IAbstractSubject iSubject = new RealSubject();
 
-        IAbstractSubject proxy = (IAbstractSubject) new DynamicProxySubject().getProxyInstance(iSubject);
+        IAbstractSubject proxy = (IAbstractSubject) new DynamicProxySubject(iSubject).getProxyInstance();
         proxy.requestHouse1();
         proxy.requestHouse2();
     }
