@@ -5,9 +5,9 @@ package proxy.dynamicProxy;
  */
 public class Client {
     public static void main(String[] args) {
-        IAbstractSubject iSubject = new RealSubject();
+        IAbstractSubject target = new RealSubject();
 
-        IAbstractSubject proxy = (IAbstractSubject) new DynamicProxySubject(iSubject).getProxyInstance();
+        IAbstractSubject proxy = (IAbstractSubject) new DynamicProxySubject(target).getProxyInstance();
         proxy.requestHouse1();
         proxy.requestHouse2();
     }
