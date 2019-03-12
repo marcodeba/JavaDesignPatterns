@@ -11,12 +11,10 @@ import java.util.List;
 public class BenzBuilder implements CarBuilder {
     private CarModel benz = new BenzModel(); //奔驰车模型
 
-    @Override
     public void setSequence(List<String> sequence) {
         this.benz.setSequence(sequence);
     }
 
-    @Override
     public CarModel getCarModel() {
         return this.benz;
     }

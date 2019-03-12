@@ -2,6 +2,7 @@ package proxy.staticProxy;
 
 /**
  * 代理角色，中介，含有真实角色的引用
+ *
  * @author marcopan
  * 代理角色做两件事：
  * 1. 关联真实角色对象

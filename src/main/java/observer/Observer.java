@@ -1,9 +1,10 @@
 package observer;
 
 public interface Observer {
-	/**
-     * ¸üÐÂ½Ó¿Ú
-     * @param state    ¸üÐÂµÄ×´Ì¬
+    /**
+     * ï¿½ï¿½ï¿½Â½Ó¿ï¿½
+     *
+     * @param state ï¿½ï¿½ï¿½Âµï¿½×´Ì¬
      */
     public void update(String state);
 }

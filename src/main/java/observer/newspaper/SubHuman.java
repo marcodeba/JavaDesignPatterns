@@ -2,15 +2,16 @@ package observer.newspaper;
 
 public class SubHuman implements ISubScribe {
 
-	//¶©ÔÄÕßµÄÃû×Ö
-	private String p_name = "";
-			
-	public SubHuman(String f_name) {
-		p_name = f_name;
-	}
-	
-	@Override
-	public void getNewsPaper() {
-		System.out.println(p_name + "!! ÓÐÐÂµÄ±¨Ö½ÁË£¬Çë²éÊÕ£¡");;
-	}
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½
+    private String p_name = "";
+
+    public SubHuman(String f_name) {
+        p_name = f_name;
+    }
+
+    @Override
+    public void getNewsPaper() {
+        System.out.println(p_name + "!! ï¿½ï¿½ï¿½ÂµÄ±ï¿½Ö½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Õ£ï¿½");
+        ;
+    }
 }

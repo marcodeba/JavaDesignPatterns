@@ -1,13 +1,13 @@
 package observer.newspaper;
 
-// ±¨Ö½½Ó¿Ú£¨±»¹Û²ìÕß,Observable£©
+// ï¿½ï¿½Ö½ï¿½Ó¿Ú£ï¿½ï¿½ï¿½ï¿½Û²ï¿½ï¿½ï¿½,Observableï¿½ï¿½
 public interface INewsPaper {
-	// Ìí¼Ó¶©ÔÄÕß
-	public void registerSubscriber(ISubScribe subScribe);
-	
-	// È¡Ïû¶©ÔÄ
-	public void removeSubscriber(ISubScribe subScribe);
-	
-	// ·¢ËÍ±¨Ö½
-	public void sendPaper();
+    // ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½
+    public void registerSubscriber(ISubScribe subScribe);
+
+    // È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public void removeSubscriber(ISubScribe subScribe);
+
+    // ï¿½ï¿½ï¿½Í±ï¿½Ö½
+    public void sendPaper();
 }

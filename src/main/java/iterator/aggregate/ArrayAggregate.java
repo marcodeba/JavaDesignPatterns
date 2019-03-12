@@ -1,7 +1,7 @@
 package iterator.aggregate;
 
-import iterator.iterator.ArrayIterator;
 import iterator.Book;
+import iterator.iterator.ArrayIterator;
 
 import java.util.Iterator;
 

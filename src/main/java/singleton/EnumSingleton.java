@@ -27,12 +27,6 @@ public enum EnumSingleton {
             EnumSingleton instance1 = EnumSingleton.getInstance();
             instance1.setData(new Object());
 
-            FileOutputStream fos = new FileOutputStream("EnumSingleton.obj");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(instance1);
-            oos.flush();
-            oos.close();
-
             FileInputStream fis = new FileInputStream("EnumSingleton.obj");
             ObjectInputStream ois = new ObjectInputStream(fis);
             EnumSingleton instance2 = (EnumSingleton) ois.readObject();

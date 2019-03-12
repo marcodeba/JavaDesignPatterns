@@ -11,7 +11,6 @@ import java.util.List;
 public class BMWBuilder implements CarBuilder {
     private CarModel bmw = new BMWModel();
 
-
     public void setSequence(List<String> sequence) {
         this.bmw.setSequence(sequence);
     }

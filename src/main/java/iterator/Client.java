@@ -24,7 +24,7 @@ public class Client {
 
         Iterator it = array.createIterator();
         while (it.hasNext()) {
-            Book book = (Book)it.next();
+            Book book = (Book) it.next();
             System.out.println(book.getName());
         }
     }

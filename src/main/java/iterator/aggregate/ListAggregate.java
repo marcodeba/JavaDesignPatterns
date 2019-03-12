@@ -3,9 +3,9 @@ package iterator.aggregate;
 import iterator.Book;
 import iterator.iterator.ListIterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
 
 public class ListAggregate implements Aggregate {
     List<Book> books;

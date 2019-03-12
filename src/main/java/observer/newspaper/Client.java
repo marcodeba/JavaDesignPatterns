@@ -2,26 +2,26 @@ package observer.newspaper;
 
 public class Client {
 
-	public static void main(String[] args) {
-		INewsPaper newsPaper = new PeopleNewsPaper();
-		ISubScribe xiaoMing = new SubHuman("Ð¡Ã÷");
-		ISubScribe zhaoYun = new SubHuman("ÕÔÔÆ");
-		ISubScribe liuBei = new SubHuman("Áõ±¸");
-		
-        //Ð¡Ã÷¶©±¨
-		newsPaper.registerSubscriber(xiaoMing);
-        //ÕÔÔÆ¶©±¨
-		newsPaper.registerSubscriber(zhaoYun);
-        //Áõ±¸¶©±¨
-		newsPaper.registerSubscriber(liuBei);
-        
-        //ÓÐÐÂ±¨Ö½ÁË
-		newsPaper.sendPaper();
-        System.out.println("---------------·¢Íê±¨Ö½ÁË------------------");
+    public static void main(String[] args) {
+        INewsPaper newsPaper = new PeopleNewsPaper();
+        ISubScribe xiaoMing = new SubHuman("Ð¡ï¿½ï¿½");
+        ISubScribe zhaoYun = new SubHuman("ï¿½ï¿½ï¿½ï¿½");
+        ISubScribe liuBei = new SubHuman("ï¿½ï¿½ï¿½ï¿½");
 
-        //Ð¡Ã÷²»Ïë¶©ÁË£¬È¡Ïû±¨Ö½
-		newsPaper.removeSubscriber(xiaoMing);
-        //ÓÖÓÐÐÂ±¨Ö½ÁË£¬¾ÍÃ»ÓÐÐ¡Ã÷µÄ±¨Ö½ÁË
-		newsPaper.sendPaper();
-	}
+        //Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        newsPaper.registerSubscriber(xiaoMing);
+        //ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½
+        newsPaper.registerSubscriber(zhaoYun);
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        newsPaper.registerSubscriber(liuBei);
+
+        //ï¿½ï¿½ï¿½Â±ï¿½Ö½ï¿½ï¿½
+        newsPaper.sendPaper();
+        System.out.println("---------------ï¿½ï¿½ï¿½ê±¨Ö½ï¿½ï¿½------------------");
+
+        //Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ë¶©ï¿½Ë£ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö½
+        newsPaper.removeSubscriber(xiaoMing);
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½Ö½ï¿½Ë£ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ä±ï¿½Ö½ï¿½ï¿½
+        newsPaper.sendPaper();
+    }
 }
