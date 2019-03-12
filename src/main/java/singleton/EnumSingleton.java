@@ -1,22 +1,12 @@
 package singleton;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 public enum EnumSingleton {
 
     INSTANCE;
     private Object data;
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
 
     public static EnumSingleton getInstance() {
         return INSTANCE;
@@ -38,5 +28,13 @@ public enum EnumSingleton {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }
