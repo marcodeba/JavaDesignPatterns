@@ -128,4 +128,5 @@ public class GPProxy {
         chars[0] += 32;
         return String.valueOf(chars);
     }
+
 }

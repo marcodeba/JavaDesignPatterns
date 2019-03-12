@@ -8,6 +8,7 @@ public class GPProxyTest {
             Person obj = (Person) new GPMeipo().getInstance(new Girl());
             System.out.println(obj.getClass());
             obj.findLove();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

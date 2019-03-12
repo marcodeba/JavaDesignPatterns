@@ -7,4 +7,5 @@ public class Girl implements Person {
         System.out.println("有6块腹肌");
         return 0;
     }
+
 }

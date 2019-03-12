@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 
 public class GPClassLoader extends ClassLoader {
-
     private File classPathFile;
 
     public GPClassLoader() {

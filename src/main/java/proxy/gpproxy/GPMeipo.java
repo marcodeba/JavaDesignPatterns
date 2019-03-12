@@ -3,6 +3,7 @@ package proxy.gpproxy;
 import java.lang.reflect.Method;
 
 public class GPMeipo implements GPInvocationHandler {
+
     private Object target;
 
     public Object getInstance(Object person) throws Exception {
