@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 public class CglibProxySubject implements MethodInterceptor {
 
-    public Object getCglibInstance(Class<?> clazz) throws Exception {
+    public Object getCglibInstance(Class<?> clazz) {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(clazz);
         enhancer.setCallback(this);
