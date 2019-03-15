@@ -88,11 +88,11 @@ public class GPProxy {
             }
 
             sb.append("public " + m.getReturnType().getName() + " " + m.getName() + "(" + paramNames.toString() + ") {" + ln);
-            sb.append("try{" + ln);
+            sb.append("try {" + ln);
             sb.append("Method m = " + interfaces[0].getName() + ".class.getMethod(\"" + m.getName() + "\",new Class[]{" + paramClasses.toString() + "});" + ln);
             sb.append((hasReturn(m.getReturnType()) ? "return " : "") + getCaseCode("this.h.invoke(this,m,new Object[]{" + paramValues + "})", m.getReturnType()) + ";" + ln);
-            sb.append("}catch(Error _ex) { }");
-            sb.append("catch(Throwable e){" + ln);
+            sb.append("} catch(Error _ex) { }");
+            sb.append("catch(Throwable e) {" + ln);
             sb.append("throw new UndeclaredThrowableException(e);" + ln);
             sb.append("}");
             sb.append(getReturnEmptyCode(m.getReturnType()));
