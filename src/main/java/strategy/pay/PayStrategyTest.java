@@ -2,9 +2,6 @@ package strategy.pay;
 
 import strategy.pay.payport.PayStrategy;
 
-/**
- * Created by Tom.
- */
 public class PayStrategyTest {
 
     public static void main(String[] args) {

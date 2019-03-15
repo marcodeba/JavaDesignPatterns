@@ -1,9 +1,6 @@
 package strategy.pay.payport;
 
 
-/**
- * Created by Tom.
- */
 public class JDPay extends Payment {
 
     public String getName() {

@@ -1,8 +1,5 @@
 package strategy.pay.payport;
 
-/**
- * Created by Tom.
- */
 public class UnionPay extends Payment {
 
     public String getName() {

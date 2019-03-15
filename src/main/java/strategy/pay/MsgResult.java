@@ -2,7 +2,6 @@ package strategy.pay;
 
 /**
  * 支付完成以后的状态
- * Created by Tom.
  */
 public class MsgResult {
     private int code;

@@ -3,9 +3,6 @@ package strategy.pay;
 import strategy.pay.payport.PayStrategy;
 import strategy.pay.payport.Payment;
 
-/**
- * Created by Tom.
- */
 public class Order {
     private String uid;
     private String orderId;
