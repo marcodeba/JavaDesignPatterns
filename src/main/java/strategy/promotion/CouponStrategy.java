@@ -2,7 +2,6 @@ package strategy.promotion;
 
 /**
  * 优惠券
- * Created by Tom
  */
 public class CouponStrategy implements PromotionStrategy {
 

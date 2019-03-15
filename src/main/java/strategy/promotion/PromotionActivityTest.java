@@ -2,7 +2,6 @@ package strategy.promotion;
 
 /**
  * 促销活动
- * Created by Tom
  */
 public class PromotionActivityTest {
     public static void main(String[] args) {

@@ -5,7 +5,6 @@ import java.util.Map;
 
 /**
  * 促销策略工厂
- * Created by Tom
  */
 public class PromotionStrategyFactory {
     private static final PromotionStrategy NON_PROMOTION = new EmptyStrategy();
@@ -30,6 +29,4 @@ public class PromotionStrategyFactory {
         String CASHBACK = "CASHBACK";
         String GROUPBUY = "GROUPBUY";
     }
-
-
 }

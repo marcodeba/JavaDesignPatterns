@@ -2,7 +2,6 @@ package strategy.promotion;
 
 /**
  * 返现活动
- * Created by Tom
  */
 public class CashbackStrategy implements PromotionStrategy {
 

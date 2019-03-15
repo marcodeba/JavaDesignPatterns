@@ -2,7 +2,6 @@ package strategy.promotion;
 
 /**
  * 拼团优惠
- * Created by Tom
  */
 public class GroupbuyStrategy implements PromotionStrategy {
 
