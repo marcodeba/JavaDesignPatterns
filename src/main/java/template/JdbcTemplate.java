@@ -8,22 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Tom on 2018/3/11.
- */
+// JDBC
 public class JdbcTemplate {
 
     private DataSource dataSource;
 
     public JdbcTemplate(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
-    public DataSource getDataSource() {
-        return dataSource;
-    }
-
-    public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -43,11 +33,15 @@ public class JdbcTemplate {
     }
 
     private void closeStatement(Statement stmt) throws Exception {
-        stmt.close();
+        if (stmt != null) {
+            stmt.close();
+        }
     }
 
     private void closeResultSet(ResultSet rs) throws Exception {
-        rs.close();
+        if (rs != null) {
+            rs.close();
+        }
     }
 
     private void closeConnection(Connection conn) throws Exception {
@@ -63,7 +57,6 @@ public class JdbcTemplate {
         }
         return result;
     }
-
 
     public List<?> executeQuery(String sql, RowMapper<?> rowMapper, Object[] values) {
         try {

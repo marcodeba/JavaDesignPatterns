@@ -7,19 +7,15 @@ import template.entity.Member;
 import java.sql.ResultSet;
 import java.util.List;
 
-/**
- * 解耦
- * Created by Tom on 2018/3/11.
- */
 public class MemberDao {
 
-    public JdbcTemplate JdbcTemplate = new JdbcTemplate(null);
+    public JdbcTemplate JdbcTemplate;
 
     public MemberDao(JdbcTemplate jdbcTemplate) {
         JdbcTemplate = jdbcTemplate;
     }
 
-    public List<?> query() {
+    public List<?> queryResult() {
         String sql = "select * from t_member";
         return JdbcTemplate.executeQuery(sql, new RowMapper<Member>() {
             @Override

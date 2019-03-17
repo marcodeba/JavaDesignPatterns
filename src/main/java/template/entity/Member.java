@@ -1,8 +1,5 @@
 package template.entity;
 
-/**
- * Created by Tom on 2018/3/11.
- */
 public class Member {
 
     private String username;
