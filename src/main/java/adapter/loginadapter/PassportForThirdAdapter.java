@@ -8,7 +8,6 @@ import adapter.loginadapter.adapters.*;
 public class PassportForThirdAdapter extends SiginService implements IPassportForThird {
 
     public ResultMsg loginForQQ(String id) {
-//        return processLogin(id,RegistForQQAdapter.class);
         return processLogin(id, LoginForQQAdapter.class);
     }
 
