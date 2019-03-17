@@ -1,13 +1,12 @@
 package observer.newspaper;
 
-// ��ֽ�ӿڣ����۲���,Observable��
 public interface INewsPaper {
-    // ��Ӷ�����
+    // 添加订阅者
     public void registerSubscriber(ISubScribe subScribe);
 
-    // ȡ������
+    // 取消订阅
     public void removeSubscriber(ISubScribe subScribe);
 
-    // ���ͱ�ֽ
+    // 发送报纸
     public void sendPaper();
 }

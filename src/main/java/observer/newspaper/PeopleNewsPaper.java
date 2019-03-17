@@ -3,7 +3,6 @@ package observer.newspaper;
 import java.util.ArrayList;
 import java.util.List;
 
-// �����ձ�
 public class PeopleNewsPaper implements INewsPaper {
 
     private List<ISubScribe> subScribeList = new ArrayList<ISubScribe>();
@@ -22,7 +21,6 @@ public class PeopleNewsPaper implements INewsPaper {
         }
     }
 
-    // ����ֽ��
     @Override
     public void sendPaper() {
         for (ISubScribe subScribe : subScribeList) {
