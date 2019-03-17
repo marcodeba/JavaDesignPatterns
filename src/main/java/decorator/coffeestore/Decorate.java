@@ -5,7 +5,7 @@ import decorator.coffeestore.coffee.Espresso;
 import decorator.coffeestore.condiment.Mocha;
 import decorator.coffeestore.condiment.Whip;
 
-public class decorate {
+public class Decorate {
     public static void main(String[] args) {
         Beverage espresso1 = new Espresso();    //实例化一个espresso对象
         System.out.println(espresso1.getDescription() + ":" + espresso1.cost()); //输出只有espresso没有配料的描述与价格
