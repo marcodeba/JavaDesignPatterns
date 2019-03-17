@@ -2,6 +2,7 @@ package observer.mouseListener;
 
 /**
  * Created by marcopan on 2018/9/11.
+ * create subject object
  */
 public interface ICat {
     // 添加订阅者
