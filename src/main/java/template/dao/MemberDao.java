@@ -14,7 +14,7 @@ public class MemberDao extends JdbcTemplate {
         super(dataSource);
     }
 
-    public List<?> queryResult() {
+    public List<?> selectAll() {
         String sql = "select * from t_member";
         return super.executeQuery(sql, new RowMapper<Member>() {
             @Override
