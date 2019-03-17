@@ -2,9 +2,6 @@ package adapter.login;
 
 import adapter.login.passport.SiginForThirdService;
 
-/**
- * Created by Tom on 2018/3/14.
- */
 public class SiginForThirdServiceTest {
 
     public static void main(String[] args) {
