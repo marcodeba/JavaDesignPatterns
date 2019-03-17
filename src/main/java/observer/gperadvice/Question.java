@@ -1,7 +1,6 @@
 package observer.gperadvice;
 
 public class Question {
-
     private String userName;
     private String content;
 

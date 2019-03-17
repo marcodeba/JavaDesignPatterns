@@ -6,17 +6,12 @@ import java.util.Observable;
  * JDK提供的一种观察者的实现方式，被观察者
  */
 public class GPer extends Observable {
-
-    private static GPer gper = null;
+    private static GPer gper = new GPer();
     private String name = "GPer生态圈";
 
-    private GPer() {
-    }
+    private GPer() {}
 
     public static GPer getInstance() {
-        if (null == gper) {
-            gper = new GPer();
-        }
         return gper;
     }
 
