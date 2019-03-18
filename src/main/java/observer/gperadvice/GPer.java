@@ -4,6 +4,7 @@ import java.util.Observable;
 
 /**
  * JDK提供的一种观察者的实现方式，被观察者
+ * Observable：可被观察的对象，即主题对象
  */
 public class GPer extends Observable {
     private static GPer gper = new GPer();

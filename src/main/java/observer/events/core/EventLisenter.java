@@ -9,7 +9,6 @@ import java.util.Map;
  * 监听器，它就是观察者
  */
 public class EventLisenter {
-
     //JDK底层的Lisenter通常也是这样来设计的
     protected Map<String,Event> events = new HashMap<String,Event>();
 

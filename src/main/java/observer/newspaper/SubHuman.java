@@ -3,14 +3,14 @@ package observer.newspaper;
 public class SubHuman implements ISubScribe {
 
     //订阅者的名字
-    private String p_name;
+    private String subScribeName;
 
-    public SubHuman(String f_name) {
-        p_name = f_name;
+    public SubHuman(String subScribeName) {
+        this.subScribeName = subScribeName;
     }
 
     @Override
     public void getNewsPaper() {
-        System.out.println(p_name + "!! 有新的报纸了，请查收！");;
+        System.out.println(subScribeName + "!! 有新的报纸了，请查收！");
     }
 }
