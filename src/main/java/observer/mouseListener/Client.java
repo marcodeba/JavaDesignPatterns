@@ -5,7 +5,7 @@ package observer.mouseListener;
  */
 public class Client {
     public static void main(String[] args) {
-        ICat cat = new BlackCat();
+        ICat cat = new BlackCat("黑猫");
         IMouse micky1 = new MickyMouse("micky1");
         IMouse micky2 = new MickyMouse("micky2");
         IMouse micky3 = new MickyMouse("micky3");

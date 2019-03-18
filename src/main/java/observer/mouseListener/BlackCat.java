@@ -8,6 +8,12 @@ import java.util.List;
  */
 public class BlackCat implements ICat {
 
+    String name;
+
+    public BlackCat(String name) {
+        this.name = name;
+    }
+
     List<IMouse> mouseList = new ArrayList<IMouse>();
 
     @Override
@@ -22,7 +28,7 @@ public class BlackCat implements ICat {
 
     @Override
     public void catchMouse() {
-        System.out.println("cat is coming!!!");
+        System.out.println(this.name + " is coming!!!");
         for (IMouse mouse : mouseList) {
             mouse.runAway();
         }
