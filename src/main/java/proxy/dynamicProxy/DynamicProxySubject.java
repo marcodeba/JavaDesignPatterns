@@ -21,6 +21,16 @@ public class DynamicProxySubject implements InvocationHandler {
          * Proxy这个类的作用就是用来动态创建一个代理对象的类
          * Proxy.newProxyInstance返回的是一个代理对象:com.sun.proxy.$Proxy0
          */
+
+        /*byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{ISubject.class});
+        try {
+            String filePath = ISubject.class.getResource("").getPath();
+            FileOutputStream fos = new FileOutputStream(filePath + "/$Proxy0.class");
+            fos.write(bytes);
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
         return Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), this);
     }
 
@@ -35,15 +45,3 @@ public class DynamicProxySubject implements InvocationHandler {
         // 增强消息......
     }
 }
-
-/**
- * //        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{IAbstractSubject.class});
- * //        try {
- * //            String filePath = IAbstractSubject.class.getResource("").getPath();
- * //            FileOutputStream fos = new FileOutputStream(filePath + "/$Proxy0.class");
- * //            fos.write(bytes);
- * //            fos.close();
- * //        } catch (Exception e) {
- * //            e.printStackTrace();
- * //        }
- */
