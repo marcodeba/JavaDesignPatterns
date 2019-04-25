@@ -1,7 +1,9 @@
 package singleton;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public enum EnumSingleton {
 
@@ -16,6 +18,12 @@ public enum EnumSingleton {
         try {
             EnumSingleton instance1 = EnumSingleton.getInstance();
             instance1.setData(new Object());
+
+            FileOutputStream fos = new FileOutputStream("EnumSingleton.obj");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(instance1);
+            oos.flush();
+            oos.close();
 
             FileInputStream fis = new FileInputStream("EnumSingleton.obj");
             ObjectInputStream ois = new ObjectInputStream(fis);

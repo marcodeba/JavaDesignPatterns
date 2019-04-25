@@ -62,6 +62,7 @@ public class LazySingleton implements Serializable {
 //        }
 //    }
 
+    // 解决序列化攻击的问题
     private Object readResolve() {
         return LazySingletonHolder.singleton;
     }
