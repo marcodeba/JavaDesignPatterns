@@ -6,7 +6,8 @@ import java.io.*;
  * Created by marcopan on 2018/9/14.
  * 有反射攻击和序列化攻击的问题
  * <p>
- * 反射攻击解决方法，在构造函数中判断单例是否为空
+ * 反射攻击解决方法：在构造函数中判断单例是否为空
+ * 序列化攻击解决方法：重写readResolve()方法
  */
 public class LazySingleton implements Serializable {
     private LazySingleton() {
