@@ -19,16 +19,18 @@ public class DynamicProxySubject implements InvocationHandler {
         this.target = target;
     }
 
+    /**
+     * 生成动态代理对象,Proxy.newProxyInstance返回的是一个代理对象:com.sun.proxy.$Proxy0
+     * 该代理对象extends Proxy implements RealSubject
+     */
     public Object getProxyInstance() {
         Class<?> clazz = target.getClass();
-        /**
-         * Proxy这个类的作用就是用来动态创建一个代理对象的类
-         * Proxy.newProxyInstance返回的是一个代理对象:com.sun.proxy.$Proxy0
-         */
+
+        // Proxy这个类的作用就是用来动态创建一个代理对象的类
         byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{clazz});
         FileOutputStream fos = null;
         try {
-            String filePath = ISubject.class.getResource("").getPath();
+            String filePath = target.getClass().getResource("").getPath();
             fos = new FileOutputStream(filePath + "/$Proxy0.class");
             fos.write(bytes);
         } catch (Exception e) {
@@ -42,11 +44,12 @@ public class DynamicProxySubject implements InvocationHandler {
                 e.printStackTrace();
             }
         }
+
         return Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), this);
     }
 
     /**
-     * proxy:指被代理的对象,$Proxy0是系统自动生成的实现ISubject接口的代理类，并持有InvocationHandler引用
+     * proxy:就是getProxyInstance生成的代理对象:com.sun.proxy.$Proxy0
      * method:指代的是我们所要调用真实对象的某个方法的Method对象
      * args:指代的是调用真实对象某个方法时接受的参数
      */
