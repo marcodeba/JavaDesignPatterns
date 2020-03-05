@@ -52,6 +52,16 @@ public class DynamicProxySubject implements InvocationHandler {
      * proxy:就是getProxyInstance生成的代理对象:com.sun.proxy.$Proxy0
      * method:指代的是我们所要调用真实对象的某个方法的Method对象
      * args:指代的是调用真实对象某个方法时接受的参数
+     *
+     * public final void requestHouse1() throws  {
+     *     try {
+     *         super.h.invoke(this, m3, (Object[])null);
+     *     } catch (RuntimeException | Error var2) {
+     *         throw var2;
+     *     } catch (Throwable var3) {
+     *         throw new UndeclaredThrowableException(var3);
+     *     }
+     * }
      */
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // 增强消息......
