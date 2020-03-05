@@ -3,6 +3,7 @@ package proxy.dynamicProxy;
 import sun.misc.ProxyGenerator;
 
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -24,15 +25,22 @@ public class DynamicProxySubject implements InvocationHandler {
          * Proxy这个类的作用就是用来动态创建一个代理对象的类
          * Proxy.newProxyInstance返回的是一个代理对象:com.sun.proxy.$Proxy0
          */
-
-        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{ISubject.class});
+        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{clazz});
+        FileOutputStream fos = null;
         try {
             String filePath = ISubject.class.getResource("").getPath();
-            FileOutputStream fos = new FileOutputStream(filePath + "/$Proxy0.class");
+            fos = new FileOutputStream(filePath + "/$Proxy0.class");
             fos.write(bytes);
-            fos.close();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), this);
     }
