@@ -5,7 +5,7 @@ package proxy.dynamicProxy;
  */
 public class Client {
     public static void main(String[] args) {
-        ISubject dynamicInstance = (ISubject) new DynamicProxySubject(new RealSubject()).getProxyInstance();
+        ISubject dynamicInstance = (ISubject) new DynamicProxySubject(new RealSubject()).createProxyInstance();
         dynamicInstance.requestHouse1();
         dynamicInstance.requestHouse2();
     }
