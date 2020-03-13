@@ -27,9 +27,13 @@ public class PromotionActivityTest {
 
 
 //    public static void main(String[] args) {
-//        String promotionKey = "GROUPBUY";
-//        PromotionActivity promotionActivity = new PromotionActivity(PromotionStrategyFactory.getPromotionStrategy(promotionKey));
-//        promotionActivity.execute();
+//        IPromotionStrategy couponStrategy = PromotionStrategyFactory.getPromotionStrategy("COUPON");
+//        PromotionActivity activity618 = new PromotionActivity(couponStrategy);
+//
+//        IPromotionStrategy cashStrategy = PromotionStrategyFactory.getPromotionStrategy("CASHBACK");
+//        PromotionActivity activity1111 = new PromotionActivity(cashStrategy);
+//
+//        activity618.execute();
+//        activity1111.execute();
 //    }
-
 }

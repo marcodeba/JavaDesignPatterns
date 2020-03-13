@@ -22,18 +22,13 @@ public class Event {
         this.callback = callback;
     }
 
+    public Object getSource() {
+        return source;
+    }
+
     public Event setSource(Object source) {
         this.source = source;
         return this;
-    }
-
-    public Event setTime(long time) {
-        this.time = time;
-        return this;
-    }
-
-    public Object getSource() {
-        return source;
     }
 
     public Event setTrigger(String trigger) {
@@ -43,6 +38,11 @@ public class Event {
 
     public long getTime() {
         return time;
+    }
+
+    public Event setTime(long time) {
+        this.time = time;
+        return this;
     }
 
     public Object getTarget() {

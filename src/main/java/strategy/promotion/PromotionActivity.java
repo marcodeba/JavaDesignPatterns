@@ -4,14 +4,14 @@ package strategy.promotion;
  * 优惠活动
  */
 public class PromotionActivity {
-    private PromotionStrategy promotionStrategy;
+    private IPromotionStrategy IPromotionStrategy;
 
-    public PromotionActivity(PromotionStrategy promotionStrategy) {
-        this.promotionStrategy = promotionStrategy;
+    public PromotionActivity(IPromotionStrategy IPromotionStrategy) {
+        this.IPromotionStrategy = IPromotionStrategy;
     }
 
     public void execute() {
-        promotionStrategy.doPromotion();
+        IPromotionStrategy.doPromotion();
     }
 
 }

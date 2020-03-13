@@ -1,7 +1,9 @@
 package decorator.coffeestore;
 
-import decorator.coffeestore.coffee.*;
-import decorator.coffeestore.condiment.*;
+import decorator.coffeestore.coffee.Beverage;
+import decorator.coffeestore.coffee.Espresso;
+import decorator.coffeestore.condiment.Mocha;
+import decorator.coffeestore.condiment.Whip;
 
 public class DecorateTest {
     public static void main(String[] args) {

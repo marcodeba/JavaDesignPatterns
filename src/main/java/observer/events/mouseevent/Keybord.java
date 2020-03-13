@@ -4,11 +4,11 @@ import observer.events.core.EventLisenter;
 
 public class Keybord extends EventLisenter {
 
-    public void down(){
+    public void down() {
 
     }
 
-    public void up(){
+    public void up() {
 
     }
 

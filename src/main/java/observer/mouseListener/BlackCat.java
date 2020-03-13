@@ -9,12 +9,11 @@ import java.util.List;
 public class BlackCat implements ICat {
 
     String name;
+    List<IMouse> mouseList = new ArrayList<IMouse>();
 
     public BlackCat(String name) {
         this.name = name;
     }
-
-    List<IMouse> mouseList = new ArrayList<IMouse>();
 
     @Override
     public void registerSubscriber(IMouse mouse) {

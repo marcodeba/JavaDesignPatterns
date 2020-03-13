@@ -5,7 +5,6 @@ import template.RowMapper;
 import template.entity.Member;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
 import java.util.List;
 
 public class MemberDao extends JdbcTemplate {

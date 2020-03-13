@@ -10,7 +10,8 @@ public class GPer extends Observable {
     private static GPer gper = new GPer();
     private String name = "GPer生态圈";
 
-    private GPer() {}
+    private GPer() {
+    }
 
     public static GPer getInstance() {
         return gper;
