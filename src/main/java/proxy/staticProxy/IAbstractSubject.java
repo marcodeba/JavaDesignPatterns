@@ -8,5 +8,5 @@ package proxy.staticProxy;
 public interface IAbstractSubject {
 
     // 代理对象和真实角色共有的方法，租房()
-    public void rentHouse();
+    void rentHouse();
 }

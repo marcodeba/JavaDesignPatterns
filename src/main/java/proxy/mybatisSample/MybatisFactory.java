@@ -17,8 +17,7 @@ public class MybatisFactory {
         byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{clazz});
         FileOutputStream fos = null;
         try {
-            String filePath = clazz.getResource("").getPath();
-            fos = new FileOutputStream(filePath + "/$Proxy0.class");
+            fos = new FileOutputStream(clazz.getResource("").getPath() + "/$Proxy0.class");
             fos.write(bytes);
         } catch (Exception e) {
             e.printStackTrace();

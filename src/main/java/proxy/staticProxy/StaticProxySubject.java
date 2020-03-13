@@ -10,7 +10,7 @@ package proxy.staticProxy;
  */
 public class StaticProxySubject implements IAbstractSubject {
     // 含有真实角色的引用
-    private RealSubject realSubject = null;
+    private RealSubject realSubject;
 
     public StaticProxySubject(RealSubject subject) {
         this.realSubject = subject;
