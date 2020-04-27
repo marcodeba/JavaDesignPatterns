@@ -8,8 +8,7 @@ public class Client {
         String filePath = ISubject.class.getResource("").getPath();
         System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, filePath);
 
-        ISubject target = new RealSubject();
-        ISubject cglibInstance = (ISubject) new CglibProxySubject().getCglibInstance(target.getClass());
+        ISubject cglibInstance = (ISubject) new CglibProxySubject().getCglibInstance(new RealSubject().getClass());
         System.out.println(cglibInstance);
         cglibInstance.requestHouse1();
         cglibInstance.requestHouse2();
