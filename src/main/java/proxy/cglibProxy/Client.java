@@ -1,6 +1,5 @@
 package proxy.cglibProxy;
 
-
 import net.sf.cglib.core.DebuggingClassWriter;
 
 public class Client {

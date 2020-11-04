@@ -20,21 +20,6 @@ public class Person {
     /*职业（非必须）*/
     private final String career;
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age='" + age + '\'' +
-                ", shoes='" + shoes + '\'' +
-                ", clothes='" + clothes + '\'' +
-                ", money='" + money + '\'' +
-                ", house='" + house + '\'' +
-                ", car='" + car + '\'' +
-                ", career='" + career + '\'' +
-                '}';
-    }
-
     private Person(Builder builder) {
         this.name = builder.name;
         this.gender = builder.gender;
@@ -48,12 +33,27 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person person = new Person.Builder("张三","男")
+        Person person = new Person.Builder("张三", "男")
                 .age("12")
                 .money("1000000")
                 .car("宝马")
                 .build();
         System.out.println(person);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age='" + age + '\'' +
+                ", shoes='" + shoes + '\'' +
+                ", clothes='" + clothes + '\'' +
+                ", money='" + money + '\'' +
+                ", house='" + house + '\'' +
+                ", car='" + car + '\'' +
+                ", career='" + career + '\'' +
+                '}';
     }
 
     public static class Builder {
